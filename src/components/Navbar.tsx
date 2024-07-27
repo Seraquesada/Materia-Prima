@@ -1,4 +1,6 @@
-import CustomLink from './CustomLink'
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const links = [
 	{
@@ -6,8 +8,12 @@ const links = [
 		text: 'Inicio',
 	},
 	{
-		href: '/#estampados',
-		text: 'Estampados',
+		href: '/#tecnicas',
+		text: 'Tecnicas',
+	},
+	{
+		href: '/#sobrenosotros',
+		text: 'Sobre Nosotros',
 	},
 	{
 		href: '/#contacto',
@@ -16,13 +22,19 @@ const links = [
 ]
 
 const Navbar = () => {
+	const pathname = usePathname()
 	return (
-		<nav>
-			<ul className='flex gap-20 border-b-2 max-w-min px-12'>
+		<nav className="sticky top-0 flex w-full justify-between bg-neutral-950 px-32 py-4 text-gray-200">
+			<h4 className="font-bold"> MATERIA PRIMA</h4>
+			<ul className="flex gap-4">
 				{links.map((l) => (
-					<li key={l.text}>
-						<CustomLink href={l.href} text={l.text} />
-					</li>
+					<Link
+						key={l.text}
+						className={'border-b border-[#D9D9D9] px-5 text-xl'}
+						href={l.href}
+					>
+						{l.text}
+					</Link>
 				))}
 			</ul>
 		</nav>
