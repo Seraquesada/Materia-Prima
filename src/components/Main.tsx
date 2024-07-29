@@ -5,21 +5,23 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const Main = () => {
 	return (
-		<section className="flex h-[92.5vh] items-center justify-between ">
+		<section
+			className="flex h-[92.5vh] items-center justify-between"
+			id="inicio"
+		>
 			<div>
-				<h1 className="text-8xl">MATERIA PRIMA</h1>
-				<h3 className="text-2xl ">
-					Todo lo que necesitas para estampar tus remeras
+				<h1 className="text-8xl font-semibold">MATERIA PRIMA</h1>
+				<h3 className="text-2xl">
+					Todo lo que necesitas para estampar
 				</h3>
 			</div>
 
 			<Swiper
 				navigation
 				slidesPerView={1}
-				direction='horizontal'
+				direction="horizontal"
 				pagination={{ type: 'fraction' }}
 				modules={[Navigation, Pagination]}
-				
 			>
 				<SwiperSlide>
 					{' '}
