@@ -1,59 +1,52 @@
 'use client'
 import Image from 'next/image'
-import { Navigation, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useEffect, useState } from 'react'
+import Slider from './Slider'
+
+const images = [
+	{ url: '/img/blanca.webp' },
+	{ url: '/img/bordo.webp' },
+	{ url: '/img/negra.webp' },
+]
 
 const Main = () => {
+	const [currentIndex, setCurrentIndex] = useState(0)
+
+	const prevSlide = () => {
+		const isFirstSlide = currentIndex === 0
+		const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1
+		setCurrentIndex(newIndex)
+	}
+
+	const nextSlide = () => {
+		const isLastSlide = currentIndex === images.length - 1
+		const newIndex = isLastSlide ? 0 : currentIndex + 1
+		setCurrentIndex(newIndex)
+	}
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			nextSlide()
+		}, 3500) // Change slide every 5 seconds
+
+		// Clean up the interval on component unmount
+		return () => clearInterval(intervalId)
+	}, [currentIndex])
+
 	return (
 		<section
-			className="flex h-[92.5vh] items-center justify-between"
+			className="flex h-[92.5vh] flex-col items-center pt-24 md:flex-row md:justify-between md:pt-0"
 			id="inicio"
 		>
-			<div>
-				<h1 className="text-8xl font-semibold">MATERIA PRIMA</h1>
-				<h3 className="text-2xl">
+			<div className="text-center md:text-left">
+				<h1 className="text-6xl font-semibold lg:text-8xl">
+					MATERIA PRIMA
+				</h1>
+				<h3 className="text-xl md:text-2xl lg:text-3xl">
 					Todo lo que necesitas para estampar
 				</h3>
 			</div>
-
-			<Swiper
-				navigation
-				slidesPerView={1}
-				direction="horizontal"
-				pagination={{ type: 'fraction' }}
-				modules={[Navigation, Pagination]}
-			>
-				<SwiperSlide>
-					{' '}
-					<Image
-						className=""
-						width={575}
-						height={400}
-						src={'/static/img/blanca.webp'}
-						alt={'carrousel'}
-					/>
-				</SwiperSlide>{' '}
-				{/* <SwiperSlide>
-					{' '}
-					<Image
-						className=""
-						width={575}
-						height={400}
-						src={'/static/img/negra.webp'}
-						alt={'carrousel'}
-					/>
-				</SwiperSlide>{' '}
-				<SwiperSlide>
-					{' '}
-					<Image
-						className=""
-						width={575}
-						height={400}
-						src={'/static/img/bordo.webp'}
-						alt={'carrousel'}
-					/>
-				</SwiperSlide> */}
-			</Swiper>
+			<Slider />
 		</section>
 	)
 }
