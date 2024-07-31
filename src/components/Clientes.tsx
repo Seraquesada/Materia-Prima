@@ -9,7 +9,7 @@ import kosiuko from '../../public/kosiuko.png'
 
 const Clientes = () => {
 	return (
-		<section className="h-screen" id="clientes">
+		<section className="" id="clientes">
 			<div className="flex flex-col items-center justify-center gap-10 pt-24 text-center">
 				<h2 className="text-7xl font-semibold">Clientes</h2>
 				<h4 className="text-3xl font-semibold">
