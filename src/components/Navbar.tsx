@@ -33,10 +33,8 @@ const Navbar = () => {
 		setOpen(!open)
 	}
 
-	
-
 	return (
-		<nav className="sticky top-0 flex w-full justify-between bg-neutral-950 px-8 py-4 text-gray-200">
+		<nav className="sticky top-0 z-10 flex w-full justify-between bg-neutral-950 px-8 py-4 text-gray-200">
 			<h4 className="font-bold">MATERIA PRIMA</h4>
 			<div className="flex items-center md:hidden" onClick={toggleOpen}>
 				<Hamburguer isOpen={open} />
