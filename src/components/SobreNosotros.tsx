@@ -5,7 +5,9 @@ const SobreNosotros = () => {
 	return (
 		<section className="" id="sobrenosotros">
 			<div className="flex flex-col items-center justify-center gap-24 pt-24 text-center">
-				<h2 className="text-7xl font-semibold">Sobre Nosotros</h2>
+				<h2 className="text-5xl font-semibold lg:text-7xl">
+					Sobre Nosotros
+				</h2>
 				<ul className="grid w-full justify-center gap-20 text-2xl font-semibold sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
 					<li className="flex flex-col">
 						<span>+80</span>Empleados
@@ -27,13 +29,20 @@ const SobreNosotros = () => {
 						Tecnicas
 					</li>
 				</ul>
-				<div className="flex w-full flex-col justify-evenly border text-start md:flex-row">
+				<div className="flex w-full flex-col justify-evenly items-center text-start md:flex-row">
 					<Slider />
-					<p className="  self-center text-3xl">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Voluptatem voluptatibus aperiam iste a autem reiciendis
-						nemo quos facere, voluptate, nobis at omnis libero
-						beatae officiis adipisci quaerat nihil? Nihil, corporis?
+					<p className="text-3xl">
+						Materia Prima es una empresa con más de 40 años de
+						experiencia en el sector de estampados, especializada en
+						la serigrafía para grandes volúmenes. Nos destacamos por
+						nuestra constante innovación y el uso de tecnología de
+						vanguardia, empleando tintas de la más alta calidad.
+						Contamos con un equipo de profesionales altamente
+						capacitados que nos permite ofrecer estampados
+						excepcionales y duraderos. Nuestro compromiso con la
+						excelencia nos ha posicionado como líderes en el
+						mercado, siempre enfocados en superar las expectativas
+						de nuestros clientes.
 					</p>
 				</div>
 			</div>
