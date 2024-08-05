@@ -8,6 +8,34 @@ import kosiuko from '../../public/kosiuko.png'
 import cheeky from '../../public/cheeky.png'
 import mimo from '../../public/mimo.png'
 import grisino from '../../public/grisino.png'
+import ReferredCard from './ReferredCard'
+
+interface Data {
+	name: string
+	position: string
+	description: string
+}
+
+const data: Data[] = [
+	{
+		name: 'Sebastina Peréz',
+		position: 'Marketing Nike',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cupiditate, error dolore sequi ducimus facere nostrum amet molestias, distinctio minus laboriosam ipsa. In minus molestiae quidem a assumenda culpa error!',
+	},
+	{
+		name: 'Francisco Martinéz',
+		position: 'CEO Mimo',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cupiditate, error dolore sequi ducimus facere nostrum amet molestias, distinctio minus laboriosam ipsa. In minus molestiae quidem a assumenda culpa error!',
+	},
+	{
+		name: 'Lucas Garcia',
+		position: 'Community Manager Puma',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cupiditate, error dolore sequi ducimus facere nostrum amet molestias, distinctio minus laboriosam ipsa. In minus molestiae quidem a assumenda culpa error!',
+	},
+]
 
 const Clientes = () => {
 	return (
@@ -68,10 +96,24 @@ const Clientes = () => {
 					/>
 				</div>
 
-				<div>
+				<div className="flex flex-col gap-4">
 					<h4 className="pt-10 text-3xl font-semibold">
-						Dejemos que ellos hablen por nosotros
+						Dejemos que ellos hablen
 					</h4>
+					<ul className="mt-5 flex w-full flex-col gap-8 text-start lg:flex-row">
+						{data.map((d) => (
+							<li
+								className="w-full rounded-md bg-neutral-950 px-4 py-3 md:w-4/5"
+								key={d.name}
+							>
+								<ReferredCard
+									name={d.name}
+									position={d.position}
+									description={d.description}
+								/>
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 		</section>
