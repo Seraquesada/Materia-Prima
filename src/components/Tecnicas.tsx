@@ -95,7 +95,6 @@ const Tecnicas = () => {
 				y: 50,
 				stagger: 0.15,
 				scrollTrigger: {
-					markers: true,
 					trigger: '.imgs',
 					start:"top center"
 				},
