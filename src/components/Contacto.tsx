@@ -2,9 +2,11 @@ import { handleForm } from '@/app/action'
 
 const Contacto = () => {
 	return (
-		<section className="h-screen" id="contacto">
+		<section className="md:h-screen" id="contacto">
 			<div className="flex flex-col justify-center gap-16 pt-24 text-center">
-				<h2 className="text-5xl font-semibold lg:text-7xl">Contacto</h2>
+				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
+					Contacto
+				</h2>
 				<form
 					action={handleForm}
 					className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"

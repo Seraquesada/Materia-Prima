@@ -13,7 +13,9 @@ const Clientes = () => {
 	return (
 		<section className="" id="clientes">
 			<div className="flex flex-col items-center justify-center gap-10 pt-24 text-center">
-				<h2 className="text-5xl font-semibold lg:text-7xl">Clientes</h2>
+				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
+					Clientes
+				</h2>
 				<h4 className="text-3xl font-semibold">
 					Empresas que ya confiaron en nosotros
 				</h4>

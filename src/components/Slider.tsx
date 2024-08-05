@@ -26,13 +26,14 @@ const Slider = () => {
 		return () => clearInterval(intervalId)
 	}, [currentIndex])
 	return (
-		<div className="group relative px-4 py-16">
-			<div className="h-full w-full rounded-2xl bg-cover bg-center duration-500">
+		<div className="group relative">
+			<div className="rounded-2xl bg-cover bg-center duration-500">
 				<Image
 					src={images[currentIndex].url}
 					alt="ImageDescription"
-					width={500}
-					height={500}
+					width={600}
+					height={600}
+					className='rounded-md'
 				/>
 			</div>
 		</div>
