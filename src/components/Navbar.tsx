@@ -36,7 +36,7 @@ const Navbar = () => {
 	return (
 		<nav className="sticky top-0 z-10 flex w-full justify-between bg-neutral-950 px-8 py-4 text-gray-200">
 			<h4 className="font-bold">MATERIA PRIMA</h4>
-			<div className="flex items-center md:hidden" onClick={toggleOpen}>
+			<div className="flex md:hidden" onClick={toggleOpen}>
 				<Hamburguer isOpen={open} />
 			</div>
 			<ul
@@ -47,7 +47,7 @@ const Navbar = () => {
 				{links.map((l) => (
 					<li key={l.text} className="my-6 md:my-0 md:ml-4">
 						<Link
-							className="scroll-smooth border-b border-[#D9D9D9] px-5 text-xl md:border-none"
+							className="scroll-smooth border-b border-[#D9D9D9] pr-5 text-xl hover:border-b-2 hover:border-white md:border-none md:px-5 md:hover:border-none md:hover:font-bold"
 							href={l.href}
 							onClick={() => setOpen(false)}
 						>
