@@ -1,4 +1,9 @@
+'use client'
 import Image from 'next/image'
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const imgs = [
 	{
@@ -72,8 +77,35 @@ const imgs = [
 ]
 
 const Tecnicas = () => {
+	gsap.registerPlugin(ScrollTrigger)
+
+	ScrollTrigger.batch('.imgs', {
+		// interval: 0.1, // time window (in seconds) for batching to occur.
+		// batchMax: 3,   // maximum batch size (targets)
+		onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.1 }),
+		// also onLeave, onEnterBack, and onLeaveBack
+		// also most normal ScrollTrigger values like start, end, etc.
+	})
+	const container = useRef(null)
+
+	useGSAP(
+		() => {
+			gsap.from('.imgs', {
+				opacity: 0,
+				y: 50,
+				stagger: 0.15,
+				scrollTrigger: {
+					markers: true,
+					trigger: '.imgs',
+					start:"top center"
+				},
+			})
+		},
+		{ scope: container },
+	)
+
 	return (
-		<section className="" id="tecnicas">
+		<section ref={container} id="tecnicas" className="tecnicas">
 			<div className="flex flex-col justify-center gap-16 pt-24 text-center">
 				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
 					Tecnicas
@@ -83,13 +115,12 @@ const Tecnicas = () => {
 					{imgs.map((img) => (
 						<Image
 							key={img.name}
-							className="curson-pointer w-64 rounded-md object-contain sm:w-full"
+							className="imgs curson-pointer w-64 rounded-md object-contain sm:w-full"
 							width={350}
 							height={350}
 							src={img.src}
 							alt={img.name}
 						/>
-
 					))}
 				</section>
 			</div>
