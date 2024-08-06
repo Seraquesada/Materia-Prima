@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const imgs = [
 	{
@@ -77,8 +78,6 @@ const imgs = [
 ]
 
 const Tecnicas = () => {
-	gsap.registerPlugin(ScrollTrigger)
-
 	ScrollTrigger.batch('.imgs', {
 		// interval: 0.1, // time window (in seconds) for batching to occur.
 		// batchMax: 3,   // maximum batch size (targets)
@@ -88,20 +87,20 @@ const Tecnicas = () => {
 	})
 	const container = useRef(null)
 
-	useGSAP(
-		() => {
-			gsap.from('.imgs', {
-				opacity: 0,
-				y: 50,
-				stagger: 0.15,
-				scrollTrigger: {
-					trigger: '.imgs',
-					start:"top center"
-				},
-			})
-		},
-		{ scope: container },
-	)
+	useGSAP(() => {
+		gsap.from('.imgs', {
+			opacity: 0,
+			y: 50,
+			stagger: 0.15,
+			scrollTrigger: {
+				trigger: '.imgs',
+				start: 'top center',
+			},
+		})
+		gsap.delayedCall(1, () => {
+			console.log('This runs in the browser')
+		})
+	})
 
 	return (
 		<section ref={container} id="tecnicas" className="tecnicas">
