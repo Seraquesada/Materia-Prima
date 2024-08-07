@@ -52,22 +52,22 @@ const Clientes = () => {
 					<Image
 						src={adidas}
 						alt="adidas"
-						className="w-32 object-contain sm:w-40 md:w-48"
+						className="w-24 object-contain sm:w-32 md:w-40"
 					/>
 					<Image
 						src={nike}
 						alt="nike"
-						className="w-32 object-contain sm:w-40 md:w-48"
+						className="w-24 object-contain sm:w-32 md:w-40"
 					/>
 					<Image
 						src={puma}
 						alt="puma"
-						className="w-32 object-contain sm:w-40 md:w-48"
+						className="w-24 object-contain sm:w-32 md:w-40"
 					/>
 					<Image
 						src={herencia}
 						alt="herencia"
-						className="w-32 object-contain sm:w-40 md:w-48"
+						className="w-24 object-contain sm:w-32 md:w-40"
 					/>
 					<Image
 						src={vans}
@@ -100,7 +100,7 @@ const Clientes = () => {
 					<h4 className="pt-10 text-3xl font-semibold">
 						Dejemos que ellos hablen
 					</h4>
-					<ul className="mt-5 flex w-full flex-col gap-8 text-start lg:flex-row">
+					<ul className="mt-5 flex w-full items-center flex-col gap-8 text-start lg:flex-row">
 						{data.map((d) => (
 							<li
 								className="w-full rounded-md bg-neutral-950 px-4 py-3 md:w-4/5"
