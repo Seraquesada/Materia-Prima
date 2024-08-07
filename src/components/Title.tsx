@@ -22,7 +22,7 @@ const Title = () => {
 				MATERIA PRIMA
 			</h1>
 			<h3 className="title text-xl md:text-2xl lg:text-3xl">
-				Todo lo que necesitas para estampar
+				Estampando tus ideas en el mundo real
 			</h3>
 		</div>
 	)

@@ -78,10 +78,6 @@ const imgs = [
 ]
 
 const Tecnicas = () => {
-	const container = useRef(null)
-	
-
-
 	useGSAP(() => {
 		gsap.from('.imgs', {
 			opacity: 0,
@@ -92,11 +88,10 @@ const Tecnicas = () => {
 				start: 'top center',
 			},
 		})
-
 	})
 
 	return (
-		<section ref={container} id="tecnicas" className="tecnicas">
+		<section id="tecnicas" className="tecnicas">
 			<div className="flex flex-col justify-center gap-16 pt-24 text-center">
 				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
 					Tecnicas
