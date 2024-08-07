@@ -7,20 +7,14 @@ const Title = () => {
 	const title = useRef(null)
 
 	useGSAP(
-		
 		() => {
-
 			gsap.from('.title', {
 				opacity: 0,
 				stagger: 0.8,
+				y: 80,
 			})
-			
-		
-			
 		},
 		{ scope: title },
-
-		
 	)
 	return (
 		<div ref={title} className="text-center md:text-left">
