@@ -10,7 +10,7 @@ const data = [
 	{ count: '+30', label: 'Clientes' },
 	{ count: '+80', label: 'Empleados' },
 	{ count: '+80', label: 'Trabajos' },
-	{ count: '+15', label: 'Tecnicas' },
+	{ count: '+20', label: 'Tecnicas' },
 ]
 
 const SobreNosotros = () => {

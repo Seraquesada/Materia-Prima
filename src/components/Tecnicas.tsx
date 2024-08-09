@@ -10,75 +10,86 @@ gsap.registerPlugin(ScrollTrigger)
 
 const imgs = [
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoPuma.jpg',
 		name: 'Plana',
 	},
 	{
-		src: '/img/bordo.webp',
+		src: '/tecnicas/planoGOAT.jpg',
+		name: 'Plana',
+	},
+	{
+		src: '/tecnicas/planoPuffTexturaPielGlitter.jpg',
 		name: 'Relieve',
 	},
 	{
-		src: '/img/negra.webp',
+		src: '/tecnicas/planoAlturaShimmer.jpg',
 		name: 'Shimmer',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoElàstico.jpg',
 		name: 'Spandex',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoCorrosion.jpg',
 		name: 'Corrosion',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoVans.jpg',
 		name: 'Plastisol',
 	},
 	{
-		src: '/img/blanca.webp',
-		name: 'Al agua',
+		src: '/tecnicas/planoFluo.jpg',
+		name: 'Flou',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoTramaSemitonos.jpg',
 		name: 'Monocromia',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoTramaSemitonos2.jpg',
 		name: 'Cuatricromia',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoFotoNike.jpg',
 		name: 'Fotocromia',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoGlitter2.jpg',
 		name: 'Glitter',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoFlock.jpg',
 		name: 'Flock',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoFoil2.jpg',
 		name: 'Foil',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoMicroAltura2.jpg',
 		name: 'Caviar',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/tramsfer.jpg',
 		name: 'Transfer',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoPapelSiliconado.jpg',
 		name: 'Silicona',
 	},
 	{
-		src: '/img/blanca.webp',
+		src: '/tecnicas/planoMetalMessi5c.jpg',
 		name: 'Perlado',
 	},
+	{
+		src: '/tecnicas/planoReflectivo.jpg',
+		name: 'Reflectivo',
+	},
+	{
+		src: '/tecnicas/planoHiperNike.jpg',
+		name: 'Hiper',
+	},
 ]
-
 
 const Tecnicas = () => {
 	const [img, setImg] = useState<string | undefined>()
@@ -92,7 +103,7 @@ const Tecnicas = () => {
 			stagger: 0.15,
 			scrollTrigger: {
 				trigger: '.imgs',
-				start: '-100px center',
+				start: '-150px center',
 			},
 		})
 	})
@@ -127,15 +138,15 @@ const Tecnicas = () => {
 				</h2>
 
 				<dialog ref={dialogRef} className="backdrop:bg-black/45">
-					<div className="z-0max-h-[90vh] relative max-w-[90vw]">
+					<div className="relative z-0 max-h-[90vh] max-w-[90vw]">
 						<p className="text-center text-2xl font-bold">
 							Tecnica {name}
 						</p>
 						{img && name && (
 							<Image
-								className="w-72 sm:w-96 lg:w-[32rem]"
-								width={450}
-								height={450}
+								className="w-72 object-cover sm:w-96 lg:w-[32rem]"
+								width={350}
+								height={350}
 								src={img}
 								alt={name}
 							/>
@@ -159,7 +170,7 @@ const Tecnicas = () => {
 								d="M6 18L18 6M6 6l12 12"
 							/>
 						</svg>
-						<span className="sr-only"> close</span>
+						<span className="sr-only">close</span>
 					</button>
 				</dialog>
 
