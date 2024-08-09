@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import adidas from '../../public/adidas.png'
-import nike from '../../public/nike.png'
-import puma from '../../public/puma.png'
-import herencia from '../../public/herencia.png'
-import vans from '../../public/vans.png'
-import kosiuko from '../../public/kosiuko.png'
-import cheeky from '../../public/cheeky.png'
-import mimo from '../../public/mimo.png'
-import grisino from '../../public/grisino.png'
+import adidas from '../../public/clientes/adidas.png'
+import nike from '../../public/clientes/nike.png'
+import puma from '../../public/clientes/puma.png'
+import herencia from '../../public/clientes/herencia.png'
+import vans from '../../public/clientes/vans.png'
+import kosiuko from '../../public/clientes/kosiuko.png'
+import cheeky from '../../public/clientes/cheeky.png'
+import mimo from '../../public/clientes/mimo.png'
+import grisino from '../../public/clientes/grisino.png'
 import ReferredCard from './ReferredCard'
 
 interface Data {
@@ -100,7 +100,7 @@ const Clientes = () => {
 					<h4 className="pt-10 text-3xl font-semibold">
 						Dejemos que ellos hablen
 					</h4>
-					<ul className="mt-5 flex w-full items-center flex-col gap-8 text-start lg:flex-row">
+					<ul className="mt-5 flex w-full flex-col items-center gap-8 text-start lg:flex-row">
 						{data.map((d) => (
 							<li
 								className="w-full rounded-md bg-neutral-950 px-4 py-3 md:w-4/5"

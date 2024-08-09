@@ -3,9 +3,12 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const images = [
-	{ url: '/img/blanca.webp' },
-	{ url: '/img/bordo.webp' },
-	{ url: '/img/negra.webp' },
+	{ url: '/img/portaPrenda.jpg' },
+	{ url: '/img/pulpo.jpg' },
+	{ url: '/img/pulpos2.jpg' },
+	{ url: '/img/pulposProductos.jpg' },
+	{ url: '/img/pulposProductos2.jpg' },
+	{ url: '/img/shablon.jpg' },
 ]
 
 const Slider = () => {

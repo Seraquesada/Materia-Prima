@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const imgs = [
@@ -91,7 +92,7 @@ const Tecnicas = () => {
 			stagger: 0.15,
 			scrollTrigger: {
 				trigger: '.imgs',
-				start: 'top center',
+				start: '-100px center',
 			},
 		})
 	})
