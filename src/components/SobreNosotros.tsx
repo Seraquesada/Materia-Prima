@@ -26,10 +26,10 @@ const SobreNosotros = () => {
 		})
 		gsap.from('.count', {
 			opacity: 0,
-			stagger:0.5,
+			stagger: 0.5,
 			scrollTrigger: {
 				trigger: '.count',
-				start: 'top bottom',
+				start: '-100px bottom',
 			},
 		})
 	})
