@@ -1,8 +1,9 @@
 import { handleForm } from '@/app/action'
+import Mapa from './Mapa'
 
 const Contacto = () => {
 	return (
-		<section className="md:h-screen" id="contacto">
+		<section className="md:pb-[20rem]" id="contacto">
 			<div className="flex flex-col justify-center gap-16 pt-24 text-center">
 				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
 					Contacto
@@ -61,6 +62,9 @@ const Contacto = () => {
 						</button>
 					</div>
 				</form>
+			</div>
+			<div className="flex justify-center pt-10 md:justify-end">
+				<Mapa />
 			</div>
 		</section>
 	)

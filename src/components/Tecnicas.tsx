@@ -15,7 +15,7 @@ const imgs = [
 	},
 	{
 		src: '/tecnicas/planoGOAT.jpg',
-		name: 'Plana',
+		name: 'Plana 2',
 	},
 	{
 		src: '/tecnicas/planoPuffTexturaPielGlitter.jpg',
