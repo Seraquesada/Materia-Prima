@@ -9,8 +9,9 @@ const data = [
 	{ count: '+40', label: 'Años de experiencia' },
 	{ count: '+30', label: 'Clientes' },
 	{ count: '+80', label: 'Empleados' },
-	{ count: '+80', label: 'Trabajos' },
+	{ count: '+100', label: 'Trabajos' },
 	{ count: '+20', label: 'Tecnicas' },
+	{ count: '100%', label: 'Calidad' },
 ]
 
 const SobreNosotros = () => {
@@ -21,7 +22,8 @@ const SobreNosotros = () => {
 			y: 20,
 			scrollTrigger: {
 				trigger: '.texto',
-				start: '-180px center',
+				start: '-250px center',
+				markers: true,
 			},
 		})
 		gsap.from('.count', {
@@ -40,7 +42,7 @@ const SobreNosotros = () => {
 				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
 					Sobre Nosotros
 				</h2>
-				<ul className="counter grid w-full justify-center gap-20 text-3xl font-semibold sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+				<ul className="counter grid w-full justify-center gap-20 text-3xl font-semibold sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
 					{data.map((item, index) => (
 						<li key={index} className="count flex flex-col">
 							<span>{item.count}</span>
