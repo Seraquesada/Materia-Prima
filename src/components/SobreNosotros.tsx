@@ -23,7 +23,6 @@ const SobreNosotros = () => {
 			scrollTrigger: {
 				trigger: '.texto',
 				start: '-250px center',
-				markers: true,
 			},
 		})
 		gsap.from('.count', {
