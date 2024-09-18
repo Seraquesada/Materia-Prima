@@ -34,13 +34,13 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav className="sticky top-0 z-10 flex w-full justify-between bg-neutral-950 px-8 py-4 text-gray-200">
+		<nav className="sticky top-0 z-10 flex w-full justify-between bg-gray-200 px-8 py-4">
 			<h4 className="font-bold">MATERIA PRIMA</h4>
 			<div className="flex md:hidden" onClick={toggleOpen}>
 				<Hamburguer isOpen={open} />
 			</div>
 			<ul
-				className={`fixed left-0 top-0 z-10 h-screen w-48 transform bg-neutral-950 p-8 transition-transform duration-300 ease-in-out md:relative md:left-auto md:top-auto md:flex md:h-auto md:w-auto md:transform-none md:p-0 md:text-center ${
+				className={`fixed left-0 top-0 z-10 h-screen w-48 transform  p-8 transition-transform duration-300 ease-in-out md:relative md:left-auto md:top-auto md:flex md:h-auto md:w-auto md:transform-none md:p-0 md:text-center ${
 					open ? 'translate-x-0' : '-translate-x-full'
 				}`}
 			>

@@ -7,7 +7,7 @@ import Tecnicas from '@/components/Tecnicas'
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center bg-gradient-to-b from-neutral-950 to-[#751006] text-neutral-100">
+		<main className="text-black-100 flex flex-col items-center bg-gradient-to-b from-gray-200 to-gray-700">
 			<Navbar />
 			<div className="flex w-10/12 flex-col">
 				<Main />
