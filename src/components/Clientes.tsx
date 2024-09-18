@@ -8,7 +8,6 @@ import kosiuko from '../../public/clientes/kosiuko.png'
 import cheeky from '../../public/clientes/cheeky.png'
 import mimo from '../../public/clientes/mimo.png'
 import grisino from '../../public/clientes/grisino.png'
-import ReferredCard from './ReferredCard'
 
 interface Data {
 	name: string
@@ -94,26 +93,6 @@ const Clientes = () => {
 						alt="cheeky"
 						className="w-32 object-contain sm:w-40 md:w-48"
 					/>
-				</div>
-
-				<div className="flex flex-col gap-4">
-					<h4 className="pt-10 text-3xl font-semibold">
-						Dejemos que ellos hablen
-					</h4>
-					<ul className="mt-5 flex w-full flex-col items-center gap-8 text-start lg:flex-row">
-						{data.map((d) => (
-							<li
-								className="w-full rounded-md bg-neutral-950 px-4 py-3 md:w-4/5"
-								key={d.name}
-							>
-								<ReferredCard
-									name={d.name}
-									position={d.position}
-									description={d.description}
-								/>
-							</li>
-						))}
-					</ul>
 				</div>
 			</div>
 		</section>
