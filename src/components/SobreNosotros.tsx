@@ -7,24 +7,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 const data = [
 	{ count: '+40', label: 'Años de experiencia' },
-	{ count: '+30', label: 'Clientes' },
+	{ count: '+50', label: 'Clientes' },
 	{ count: '+80', label: 'Empleados' },
-	{ count: '+100', label: 'Trabajos' },
 	{ count: '+20', label: 'Tecnicas' },
-	{ count: '100%', label: 'Calidad' },
 ]
 
 const SobreNosotros = () => {
 	useGSAP(() => {
-		gsap.from('.texto', {
-			opacity: 0,
-			duration: 1.54,
-			y: 20,
-			scrollTrigger: {
-				trigger: '.texto',
-				start: '-250px center',
-			},
-		})
 		gsap.from('.count', {
 			opacity: 0,
 			stagger: 0.5,
@@ -41,7 +30,7 @@ const SobreNosotros = () => {
 				<h2 className="text-4xl font-semibold sm:text-5xl lg:text-7xl">
 					Sobre Nosotros
 				</h2>
-				<ul className="counter grid w-full justify-center gap-20 text-3xl font-semibold sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+				<ul className="counter grid w-full justify-center gap-20 text-3xl font-semibold sm:grid-cols-2 lg:grid-cols-4">
 					{data.map((item, index) => (
 						<li key={index} className="count flex flex-col">
 							<span>{item.count}</span>
@@ -51,7 +40,7 @@ const SobreNosotros = () => {
 				</ul>
 				<div className="flex flex-col items-center justify-center gap-8 xl:flex-row">
 					<Slider />
-					<p className="texto text-start text-lg sm:text-2xl md:text-3xl lg:w-[65%]">
+					<p className="text-start text-xl lg:w-[65%]">
 						Materia Prima es una empresa con más de 40 años de
 						experiencia en el sector de estampados, especializada en
 						la serigrafía para grandes volúmenes. Nos destacamos por
