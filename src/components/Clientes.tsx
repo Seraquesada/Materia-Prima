@@ -64,6 +64,11 @@ const Clientes = () => {
 						className="w-24 object-contain sm:w-32 md:w-40"
 					/>
 					<Image
+						src={cheeky}
+						alt="cheeky"
+						className="w-32 object-contain sm:w-40 md:w-48"
+					/>
+					<Image
 						src={herencia}
 						alt="herencia"
 						className="w-24 object-contain sm:w-32 md:w-40"
@@ -88,11 +93,6 @@ const Clientes = () => {
 						alt="grisino"
 						className="w-32 object-contain sm:w-40 md:w-48"
 					/>{' '}
-					<Image
-						src={cheeky}
-						alt="cheeky"
-						className="w-32 object-contain sm:w-40 md:w-48"
-					/>
 				</div>
 			</div>
 		</section>

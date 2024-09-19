@@ -40,7 +40,7 @@ const Navbar = () => {
 				<Hamburguer isOpen={open} />
 			</div>
 			<ul
-				className={`fixed left-0 top-0 z-10 h-screen w-48 transform  p-8 transition-transform duration-300 ease-in-out md:relative md:left-auto md:top-auto md:flex md:h-auto md:w-auto md:transform-none md:p-0 md:text-center ${
+				className={`fixed left-0 top-0 z-10 h-screen w-48 transform bg-gray-700 p-8 transition-transform duration-300 ease-in-out md:relative md:left-auto md:top-auto md:flex md:h-auto md:w-auto md:transform-none md:bg-gray-200 md:p-0 md:text-center ${
 					open ? 'translate-x-0' : '-translate-x-full'
 				}`}
 			>
