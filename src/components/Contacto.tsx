@@ -1,5 +1,7 @@
 import { handleForm } from '@/app/action'
 import Mapa from './Mapa'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Contacto = () => {
 	return (
@@ -63,6 +65,15 @@ const Contacto = () => {
 					</div>
 				</form>
 			</div>
+			<Link href={`https://wa.me/+5491140453849`} target="_blank">
+				¿Alguna duda? Habla con nosotros por WhatsApp
+				<Image
+					src={'whats.svg'}
+					alt="whatsapp"
+					height={100}
+					width={100}
+				/>
+			</Link>
 			<div className="flex justify-center pt-10 md:justify-end">
 				<Mapa />
 			</div>

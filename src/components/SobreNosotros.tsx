@@ -40,7 +40,7 @@ const SobreNosotros = () => {
 				</ul>
 				<div className="flex flex-col items-center justify-center gap-8 xl:flex-row">
 					<Slider />
-					<p className="text-start font-[inter] text-xl lg:w-[65%]">
+					<p className="text-start  text-xl font-semibold lg:w-[65%]">
 						Materia Prima es una empresa con más de 40 años de
 						experiencia en el sector de estampados, especializada en
 						la serigrafía para grandes volúmenes. Nos destacamos por

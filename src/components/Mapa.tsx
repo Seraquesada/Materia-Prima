@@ -1,49 +1,30 @@
 'use client'
 
-import {
-	GoogleMap,
-	InfoWindowF,
-	MarkerF,
-	useJsApiLoader,
-} from '@react-google-maps/api'
-import { useState } from 'react'
+import { MapContainer, TileLayer, Popup } from 'react-leaflet'
+import { LatLngExpression } from 'leaflet'
+import { Marker } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 
-const containerStyle = {
-	width: '500px ',
-	height: '500px ',
-	borderRadius: '20px ',
-}
+function Mapa() {
+	const position: LatLngExpression = [-34.52167, -58.52893] // Example coordinates
 
-const center = {
-	lat: -34.52167,
-	lng: -58.52893,
-}
-
-const Mapa = () => {
-	const [open, setOpen] = useState(false)
-	const { isLoaded } = useJsApiLoader({
-		id: 'materia-prima',
-		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-	})
-
-	return isLoaded ? (
-		<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-			{/* Child components, such as markers, info windows, etc. */}
-
-			<MarkerF position={center} onClick={() => setOpen(true)} />
-			{open && (
-				<InfoWindowF
-					position={center}
-					onCloseClick={() => setOpen(false)}
-				>
-					<p className="font-semibold text-black">
-						Fabrica de Materia Prima
-					</p>
-				</InfoWindowF>
-			)}
-		</GoogleMap>
-	) : (
-		<></>
+	return (
+		<MapContainer
+			center={position}
+			zoom={15}
+			scrollWheelZoom={false}
+			style={{ height: '400px', width: '400px' }}
+		>
+			<TileLayer
+				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+			/>
+			<Marker position={[-34.52167, -58.52893]}>
+				<Popup>
+					Fabrica de Materia Prima <br /> .
+				</Popup>
+			</Marker>
+		</MapContainer>
 	)
 }
 

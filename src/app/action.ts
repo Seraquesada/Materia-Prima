@@ -7,8 +7,8 @@ import { Resend } from 'resend';
 export async function handleForm(formData: FormData) {
     const name = formData.get("nombre")?.valueOf() as string;
     const email = formData.get("email")?.valueOf() as string;
-    const asunto = formData.get("asunto");
-    const content = formData.get("mensaje");
+    const asunto = formData.get("asunto")?.valueOf() as string;
+    const content = formData.get("mensaje")?.valueOf() as string;
 
     if (!asunto || !name || !email || !content) {
         return console.log("Please fill all fields", name, email, asunto, content);
@@ -16,12 +16,12 @@ export async function handleForm(formData: FormData) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { data, error } = await resend.emails.send({
-        from: 'Sera <onboarding@resend.dev>',
+        from: 'Desde Web <onboarding@resend.dev>',
         to: ['quesada.serafin03@gmail.com'],
-        subject: 'Hello world',
-        react: EmailTemplate({ firstName: 'John' }),
+        subject: asunto,
+        react: EmailTemplate({ firstName: name, text: content }),
     });
 
-    console.log(data);
+    console.log(data, error);
 
 }
