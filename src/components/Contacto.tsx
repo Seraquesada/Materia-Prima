@@ -1,6 +1,5 @@
-'use client'
-import { handleForm } from '@/app/action'
 
+import { handleForm } from '@/app/action'
 import Link from 'next/link'
 import Image from 'next/image'
 
