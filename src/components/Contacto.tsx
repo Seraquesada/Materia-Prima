@@ -21,12 +21,11 @@ const Contacto = () => {
 				/>
 			</Link>
 			<Link href={`https://wa.me/+5491140453849`} target="_blank">
-				¿Alguna duda? Habla con nosotros por WhatsApp
 				<Image
 					src={'whats.svg'}
 					alt="whatsapp"
-					height={100}
-					width={100}
+					height={300}
+					width={300}
 				/>
 			</Link>
 			<div className="flex justify-center pt-10 md:justify-end"></div>
