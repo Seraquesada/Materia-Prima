@@ -11,21 +11,12 @@ const Contacto = () => {
 				</h2>
 				<Form />
 			</div>
-			<Link href={`https://wa.me/+5491140453849`} target="_blank">
-				¿Alguna duda? Habla con nosotros por WhatsApp
+			<Link href={`https://wa.me/+5491140453849`} target="_blank" className='pt-10'>
 				<Image
 					src={'whats.svg'}
 					alt="whatsapp"
-					height={100}
-					width={100}
-				/>
-			</Link>
-			<Link href={`https://wa.me/+5491140453849`} target="_blank">
-				<Image
-					src={'whats.svg'}
-					alt="whatsapp"
-					height={300}
-					width={300}
+					height={250}
+					width={250}
 				/>
 			</Link>
 			<div className="flex justify-center pt-10 md:justify-end"></div>
