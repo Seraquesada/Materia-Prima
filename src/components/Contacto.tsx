@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Form from './Form'
+import Mapa from './mapa'
 
 const Contacto = () => {
 	return (
@@ -11,15 +12,18 @@ const Contacto = () => {
 				</h2>
 				<Form />
 			</div>
-			<Link href={`https://wa.me/+5491140453849`} target="_blank" className='pt-10'>
+			<Link href={`https://wa.me/+5491140453849`} target="_blank">
 				<Image
 					src={'whats.svg'}
 					alt="whatsapp"
-					height={250}
-					width={250}
+					height={150}
+					width={150}
+					className="pt-10 hover:scale-105"
 				/>
 			</Link>
-			<div className="flex justify-center pt-10 md:justify-end"></div>
+			<div className="flex justify-center pt-10 md:justify-end">
+				{/* <Mapa /> */}
+			</div>
 		</section>
 	)
 }
