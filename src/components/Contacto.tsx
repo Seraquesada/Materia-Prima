@@ -1,3 +1,4 @@
+'use client'
 import { handleForm } from '@/app/action'
 import Mapa from './Mapa'
 import Link from 'next/link'
@@ -11,13 +12,16 @@ const Contacto = () => {
 					Contacto
 				</h2>
 				<form
-					action={handleForm}
+					action={async (formData) => {
+						await handleForm(formData)
+					}}
 					className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"
 				>
 					<div className="flex flex-wrap gap-4 lg:flex-nowrap">
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="nombre">Nombre Completo</label>
 							<input
+								required={true}
 								type="text"
 								name="nombre"
 								id="nombre"
@@ -28,6 +32,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="email">Email</label>
 							<input
+								required={true}
 								type="text"
 								name="email"
 								id="email"
@@ -38,6 +43,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="asunto">Asunto</label>
 							<input
+								required={true}
 								type="text"
 								name="asunto"
 								id="asunto"
@@ -50,6 +56,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start">
 							<label htmlFor="mensaje">Mensaje</label>
 							<textarea
+								required={true}
 								name="mensaje"
 								id="mensaje"
 								placeholder="Mensaje"
