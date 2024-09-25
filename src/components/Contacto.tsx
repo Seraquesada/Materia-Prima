@@ -12,7 +12,6 @@ const Contacto = () => {
 				</h2>
 				<form
 					action={async (formData) => {
-						'use server'
 						await handleForm(formData)
 					}}
 					className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"
