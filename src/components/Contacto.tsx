@@ -1,9 +1,15 @@
-
 import { handleForm } from '@/app/action'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FormEvent } from 'react'
 
 const Contacto = () => {
+	const handleSubmit = async (event: any) => {
+		event.preventDefault() // Prevent the default form submission
+		const formData = new FormData(event.target) // Get form data
+		await handleForm(formData) // Call your handleForm function
+	}
+
 	return (
 		<section className="md:pb-[20rem]" id="contacto">
 			<div className="flex flex-col justify-center gap-16 pt-24 text-center">
@@ -11,16 +17,14 @@ const Contacto = () => {
 					Contacto
 				</h2>
 				<form
-					action={async (formData) => {
-						await handleForm(formData)
-					}}
+					onSubmit={handleSubmit}
 					className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"
 				>
 					<div className="flex flex-wrap gap-4 lg:flex-nowrap">
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="nombre">Nombre Completo</label>
 							<input
-								required={true}
+								required
 								type="text"
 								name="nombre"
 								id="nombre"
@@ -31,7 +35,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="email">Email</label>
 							<input
-								required={true}
+								required
 								type="text"
 								name="email"
 								id="email"
@@ -42,7 +46,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start lg:w-1/3">
 							<label htmlFor="asunto">Asunto</label>
 							<input
-								required={true}
+								required
 								type="text"
 								name="asunto"
 								id="asunto"
@@ -55,7 +59,7 @@ const Contacto = () => {
 						<div className="flex w-full flex-col gap-1 text-start">
 							<label htmlFor="mensaje">Mensaje</label>
 							<textarea
-								required={true}
+								required
 								name="mensaje"
 								id="mensaje"
 								placeholder="Mensaje"
@@ -71,15 +75,6 @@ const Contacto = () => {
 					</div>
 				</form>
 			</div>
-			<Link href={`https://wa.me/+5491140453849`} target="_blank">
-				¿Alguna duda? Habla con nosotros por WhatsApp
-				<Image
-					src={'whats.svg'}
-					alt="whatsapp"
-					height={100}
-					width={100}
-				/>
-			</Link>
 			<Link href={`https://wa.me/+5491140453849`} target="_blank">
 				¿Alguna duda? Habla con nosotros por WhatsApp
 				<Image
