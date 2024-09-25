@@ -1,3 +1,4 @@
+'use client'
 import { handleForm } from '@/app/action'
 
 import Link from 'next/link'
@@ -12,7 +13,7 @@ const Contacto = () => {
 				</h2>
 				<form
 					action={async (formData) => {
-						"use server"
+						'use server'
 						await handleForm(formData)
 					}}
 					className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"
@@ -81,9 +82,16 @@ const Contacto = () => {
 					width={100}
 				/>
 			</Link>
-			<div className="flex justify-center pt-10 md:justify-end">
-				
-			</div>
+			<Link href={`https://wa.me/+5491140453849`} target="_blank">
+				¿Alguna duda? Habla con nosotros por WhatsApp
+				<Image
+					src={'whats.svg'}
+					alt="whatsapp"
+					height={100}
+					width={100}
+				/>
+			</Link>
+			<div className="flex justify-center pt-10 md:justify-end"></div>
 		</section>
 	)
 }

@@ -117,18 +117,24 @@ const Tecnicas = () => {
 	const [img, setImg] = useState<string | undefined>()
 	const [name, setName] = useState<string | undefined>()
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
+	const box = useRef(null)
 
-	useGSAP(() => {
-		gsap.from('.img-container', {
-			opacity: 0,
-			y: 50,
-			stagger: 0.15,
-			scrollTrigger: {
-				trigger: '.img-container',
-				start: '-150px center',
-			},
-		})
-	})
+	useGSAP(
+		() => {
+			if (typeof window !== 'undefined') {
+				gsap.from('.img-container', {
+					opacity: 0,
+					y: 50,
+					stagger: 0.15,
+					scrollTrigger: {
+						trigger: '.img-container',
+						start: '-150px center',
+					},
+				})
+			}
+		},
+		{ scope: box },
+	)
 
 	useEffect(() => {
 		if (!img) return
@@ -188,7 +194,10 @@ const Tecnicas = () => {
 					</div>
 				</dialog>
 
-				<ul className="grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+				<ul
+					ref={box}
+					className="grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
+				>
 					{imgs.map((img) => (
 						<li key={img.src} className="img-container">
 							<button

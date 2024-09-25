@@ -10,9 +10,9 @@ export default function Home() {
 		<main className="text-black-100 flex flex-col items-center bg-gradient-to-b from-gray-200 to-gray-800">
 			<Navbar />
 			<div className="flex w-10/12 flex-col">
-				<Main />
+				{/* <Main />
 				<Tecnicas />
-				<SobreNosotros />
+				<SobreNosotros /> */}
 				<Clientes />
 				<Contacto />
 			</div>
