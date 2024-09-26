@@ -1,21 +1,32 @@
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
 
 
-function Mapa() {
-	return (
-		<MapContainer center={[-34.52167, -58.52893]} zoom={13} scrollWheelZoom={false}>
-			<TileLayer
-				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-			/>
-			<Marker position={[-34.52167, -58.52893]}>
-				<Popup>
-					A pretty CSS3 popup. <br /> Easily customizable.
-				</Popup>
-			</Marker>
-		</MapContainer>
-	)
+
+import Image from 'next/image'
+
+
+const containerStyle = {
+	width: '500px ',
+	height: '500px ',
+	borderRadius: '20px ',
+}
+const center = {
+	lat: -34.52167,
+	lng: -58.52893,
+
+}
+
+const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API!
+const Mapa = () => {
+
+	return <Image
+		src={`https://maps.googleapis.com/maps/api/staticmap?center=-34.52167,-58.52893&format=png32&zoom=15&scale=4&size=300x300&markers=color:red|size:small|-34.52167,-58.52893&key=${key}`}
+		alt='mapa'
+		width={300}
+		height={300}
+		className='py-5 md:py-0'
+		priority={true}
+	/>
+
 }
 
 export default Mapa
