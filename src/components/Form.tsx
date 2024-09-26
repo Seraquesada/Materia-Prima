@@ -1,9 +1,32 @@
+"use client"
+import { useRef, useState, FormEvent } from 'react'
 import { handleForm } from '@/app/action'
 
 const Form = () => {
+	const formRef = useRef<HTMLFormElement>(null)
+	const [formSubmitted, setFormSubmitted] = useState(false)
+
+	const handleSubmit = async (e: FormEvent<HTMLFormElement> ) => {
+		e.preventDefault()
+
+		// Call your form action here
+		const formData = new FormData(e.currentTarget)
+		await handleForm(formData)
+
+		// Reset the form after successful submission
+		if (formRef.current) {
+			formRef.current.reset()
+		}
+		setFormSubmitted(true)
+
+		// Optionally, reset formSubmitted state after some time to clear any success message
+		setTimeout(() => setFormSubmitted(false), 3000)
+	}
+
 	return (
 		<form
-			action={ handleForm}
+			ref={formRef}
+			onSubmit={handleSubmit}
 			className="flex flex-col gap-6 rounded-md bg-white px-4 py-4 text-black"
 		>
 			<div className="flex flex-wrap gap-4 lg:flex-nowrap">
@@ -22,7 +45,7 @@ const Form = () => {
 					<label htmlFor="email">Email</label>
 					<input
 						required={true}
-						type="text"
+						type="email"
 						name="email"
 						id="email"
 						placeholder="juanmartinez@gmail.com"
@@ -59,6 +82,7 @@ const Form = () => {
 					Enviar
 				</button>
 			</div>
+			{formSubmitted && <p className="text-green-500">¡Formulario enviado con éxito!</p>}
 		</form>
 	)
 }
