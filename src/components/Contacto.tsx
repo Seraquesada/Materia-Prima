@@ -17,6 +17,8 @@ const Contacto = () => {
 
 				<div className="">
 					<p className='text-white text-wrap text-center' > ACASSUSO 5170, MUNRO, BUENOS AIRES</p>
+					<p className='text-white text-wrap text-center' > 4764-4833 Interno 115</p>
+
 					<Mapa />
 				</div>
 				<Link href={`https://wa.me/+5491140453849`} target="_blank" className='md:self-end'>

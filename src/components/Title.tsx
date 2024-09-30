@@ -21,9 +21,7 @@ const Title = () => {
 			<h1 className="title text-5xl font-semibold sm:text-6xl lg:text-8xl">
 				MATERIA PRIMA
 			</h1>
-			<h3 className="title text-xl md:text-2xl lg:text-3xl">
-				HACEMOS ARTE
-			</h3>
+
 		</div>
 	)
 }
