@@ -16,6 +16,7 @@ const Contacto = () => {
 			<div className='flex flex-col-reverse md:flex-row pt-5 gap-3 items-center md:items-start'>
 
 				<div className="">
+					<p className='text-white text-wrap text-center' > ACASSUSO 5170, MUNRO, BUENOS AIRES</p>
 					<Mapa />
 				</div>
 				<Link href={`https://wa.me/+5491140453849`} target="_blank" className='md:self-end'>
